@@ -4,6 +4,11 @@ def has_negatives(a):
     """
     # Your code here
 
+    positive = {n:None for n in a if n > 0}
+    negative = {n:None for n in a if n < 0}
+    
+    result = [n for n in positive if -n in negative]
+
     return result
 
 
