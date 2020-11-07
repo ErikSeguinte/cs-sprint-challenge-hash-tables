@@ -4,6 +4,24 @@ def intersection(arrays):
     """
     # Your code here
 
+    arrays.sort(key = lambda x : len(x))
+
+    dicts = [
+        {ls: None for ls in array} for array in arrays
+    ]
+
+    counts = {}
+
+    for a in dicts:
+        for n in a.keys():
+            if n not in counts:
+                counts[n] = 1
+            else:
+                counts[n] += 1
+
+    result = [k for k,v in counts.items() if v == len(arrays)]
+
+
     return result
 
 
